@@ -4,7 +4,7 @@ import "../public/global.css";
 const app = new App({
     target: document.body,
     props: {
-        title: 'Svelte + Tailwind 2'
+        title: 'Electron + Svelte + Tailwind 2'
     }
 });
 

@@ -1,6 +1,6 @@
 {
     "name": "svelte-app",
-    "productName": "Svelte App",
+    "productName": "Electron Svelte App",
     "version": "1.0.0",
     "license": "MIT",
     "description": "Electron Svelte Tailwind app template",
