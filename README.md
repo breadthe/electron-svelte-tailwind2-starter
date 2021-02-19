@@ -62,11 +62,31 @@ yarn install
 ...then start Electron in development mode:
 
 ```bash
-npm run electron-dev
+npm run electron:dev
 # or
-yarn electron-dev
+yarn electron:dev
 ```
 
 ## Building for production
 
-wip
+To build for the current platform:
+
+```bash
+npm run electron:build
+# or
+yarn electron:build
+```
+
+Platform-specific builds:
+
+```bash
+# Mac
+yarn electron:build:mac
+
+# Windows
+yarn electron:build:win
+
+# Linux
+yarn electron:build:linux
+
+```

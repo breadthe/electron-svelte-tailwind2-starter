@@ -1,7 +1,7 @@
 {
-    "name": "svelte-app",
+    "name": "electron-svelte-app",
     "productName": "Electron Svelte App",
-    "version": "1.0.0",
+    "version": "0.2.0",
     "license": "MIT",
     "description": "Electron Svelte Tailwind app template",
     "main": "src/index.js",
@@ -10,9 +10,17 @@
         "dev": "rollup -c -w",
         "start": "sirv public",
         "electron": "wait-on http://localhost:5000 && electron .",
-        "electron-dev": "concurrently \"npm run dev\" \"npm run electron\"",
-        "preelectron-pack": "npm run build",
-        "electron-pack": "electron-builder"
+        "electron:dev": "concurrently \"npm run dev\" \"npm run electron\"",
+        "electron:build": "npm run build && electron-builder",
+        "electron:build:mac": "npm run build && electron-builder --mac",
+        "electron:build:win": "npm run build && electron-builder --win --x64",
+        "electron:build:linux": "npm run build && electron-builder --linux",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "dependencies": {
+        "sirv-cli": "^1.0.0",
+        "electron-reload": "^1.5.0",
+        "electron-squirrel-startup": "^1.0.0"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.1.0",
@@ -22,20 +30,16 @@
         "electron": "^11.2.3",
         "electron-builder": "^22.9.1",
         "electron-packager": "^15.2.0",
-        "electron-reload": "^1.5.0",
-        "electron-squirrel-startup": "^1.0.0",
         "postcss": "^8.2.2",
         "postcss-import": "^14",
         "rollup": "^2.3.4",
         "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-node-builtins": "^2.1.2",
         "rollup-plugin-postcss": "^4.0",
         "rollup-plugin-svelte": "^7.0",
         "rollup-plugin-terser": "^7.0.0",
         "svelte": "^3.31",
         "tailwindcss": "^2.0.2",
         "wait-on": "^5.2.1"
-    },
-    "dependencies": {
-        "sirv-cli": "^1.0.0"
     }
 }
