@@ -51,7 +51,7 @@
   class:from-yellow-200={!$dark}
   class:to-pink-300={!$dark}
 >
-  <div class="flex flex-col items-center space-y-8">
+  <div class="flex flex-col items-center max-w-lg space-y-8">
     <div class:text-pink-100={$dark} class:text-pink-900={!$dark}>
       <h1 class="hello leading-tight">{title}</h1>
       Visit the
@@ -91,7 +91,6 @@
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
   }
 
