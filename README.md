@@ -4,7 +4,13 @@ Starter template for [Electron](https://www.electronjs.org/) + [Svelte](https://
 
 Based on [Svelte + TailwindCSS 2.0 starter](https://github.com/breadthe/svelte-tailwind2-starter).
 
-It has built-in support for TailwindCSS 2.0, while the bundling is handled by Rollup.
+Features:
+
+- Electron 11
+- Svelte 3
+- TailwindCSS 2
+- Rollup
+- SCSS support
 
 There's also a simple dark/light mode switch, and a surprise button 👇
 

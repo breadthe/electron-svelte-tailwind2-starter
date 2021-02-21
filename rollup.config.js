@@ -1,3 +1,4 @@
+import builtins from 'rollup-plugin-node-builtins';
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -43,6 +44,7 @@ export default {
         },
     ],
     plugins: [
+        builtins(),
         postcss({
             extract: 'bundle.min.css',
             sourceMap: production,

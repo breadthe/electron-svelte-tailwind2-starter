@@ -1,0 +1,45 @@
+body {
+    @apply text-sm;
+    @apply m-0;
+    @apply p-0;
+}
+
+.bg-svelte-orange {
+    background-color: $svelte-orange;
+}
+.text-svelte-orange {
+    color: $svelte-orange;
+}
+.border-svelte-orange {
+    border-color: $svelte-orange;
+}
+
+h1 {
+    @apply font-bold;
+    @apply text-2xl;
+}
+
+h2 {
+    @apply font-medium;
+    @apply text-xl;
+}
+
+h3 {
+    @apply font-bold;
+    @apply text-lg;
+}
+
+h4 {
+    @apply font-normal;
+    @apply text-base;
+}
+
+h5 {
+    @apply font-normal;
+    @apply text-sm;
+}
+
+h6 {
+    @apply font-light;
+    @apply text-xs;
+}

@@ -76,12 +76,16 @@
         This next button demonstrates the use of
         <span class="highlight">@apply</span>
         . See
-        <span class="highlight">global.css</span>
+        <span class="highlight">app.scss</span>
         for examples.
       </p>
       <button type="button" class="custom-btn" on:click={() => clickMe()}>
         Click Me
       </button>
+    </div>
+
+    <div>
+      <h1 class="text-svelte-orange">Orange text styled from SCSS</h1>
     </div>
   </div>
 </main>

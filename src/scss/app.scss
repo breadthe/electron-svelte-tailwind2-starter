@@ -1,5 +1,10 @@
-@tailwind base;
-@tailwind components;
+@import "~tailwindcss/base";
+
+@import "./_variables";
+@import "./_base";
+
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
 
 .hello {
     @apply bg-clip-text bg-gradient-to-br font-black from-orange-400 text-7xl text-transparent to-indigo-600 via-red-600;
@@ -12,5 +17,3 @@
 .highlight {
     @apply font-mono bg-yellow-200 px-1 rounded-sm text-pink-900;
 }
-
-@tailwind utilities;
