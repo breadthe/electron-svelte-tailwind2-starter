@@ -1,0 +1,101 @@
+productName: ElectronSvelteApp
+appId: com.example.app
+
+asar: true
+compression: normal
+npmRebuild: false
+directories:
+  output: out
+  buildResources: build
+
+mac:
+  # Mac categories
+  # Example: public.app-category.developer-tools
+  # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW8
+  category: public.app-category.developer-tools
+  icon: ./icons/icon.icns
+  target:
+    - target: dmg
+    - target: zip
+  # Associate a file type with the Electron application
+  fileAssociations:
+    - ext: svg
+      role: Viewer
+
+  # steps for notarizing the MacOS builds:
+  # https://kilianvalkhof.com/2019/electron/notarizing-your-electron-application/
+
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/macos/entitlements.mac.plist
+  entitlementsInherit: build/macos/entitlements.mac.plist
+
+dmg:
+  # The inner app inside the .dmg is signed and there is some broken logic
+  # which requires that the DMG itself is not signed.
+  sign: false
+
+linux:
+  artifactName: ${name}-${version}-${arch}.${ext}
+  # synopsis = short description
+  # https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description
+  synopsis: ElectronSvelteApp
+  description: ElectronSvelteApp
+  # Application category
+  # https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry
+  category: Office
+  target:
+    - target: deb
+    - target: tar.gz
+    - target: snap
+
+  # WARNING: 'icon' is NOT supported well or at all on Linux. the only way to
+  # get them to work is to define them under 'mac' and use the icon.icns file
+  # to specify the icons.
+
+  # Associate a file type with the Electron application
+  fileAssociations:
+    - ext: svg
+      mimeType: image/svg+xml
+
+nsis:
+  artifactName: ${name}-${version}-${arch}.${ext}
+
+appx:
+  artifactName: ${name}-${version}-${arch}.${ext}
+  applicationId: ElectronSvelteApp
+  # identityName
+  # https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-identity?redirectedfrom=MSDN
+  identityName: 12345PublisherDisplayName.ElectronSvelteApp
+  # publisher = The Windows Store publisher
+  publisher: AB=A1234567-A12B-1A23-A123-A123B1C2DEF3
+  # publisherDisplayName defaults to company name from application metadata
+  publisherDisplayName: PublisherDisplayName
+
+win:
+  artifactName: ${name}-${version}-${arch}.${ext}
+  target:
+
+    # Building on Linux requires nsis packages and they're built in a
+    # docker container for windows.
+
+    - target: nsis
+
+    # appx packages are built for Windows on Windows and are designed
+    # for the windows store.
+
+    - target: appx
+
+    #- target: portable
+  icon: ./icons/icon-512x512.png
+  publisherName: PublisherDisplayName
+
+# https://www.electron.build/configuration/publish
+# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+publish:
+  provider: github
+  publishAutoUpdate: true
+
+# Optional
+# afterPack: "./scripts/electron-builder-afterpack.js"
+# afterSign: "./scripts/notarize.js"

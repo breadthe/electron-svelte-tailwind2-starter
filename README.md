@@ -96,3 +96,29 @@ yarn electron:build:win
 yarn electron:build:linux
 
 ```
+
+## App icons
+
+Follow these instructions to generate application icons for each platform (Mac/Windows/Linux).
+
+First, install the [electron-icon-maker](https://github.com/jaretburkett/electron-icon-maker) utility globally.
+
+Next, in your project folder, run the `electron-icon-maker` command to create the icon sets:
+
+```bash
+electron-icon-maker --input=generic-app-icon.png
+# Creates the following folders:
+# ./icons/mac
+# ./icons/png
+# ./icons/win
+```
+
+If you want the `icons` folder to be created inside another folder (such as `src`), modify the command as follows:
+
+```bash
+electron-icon-maker --input=generic-app-icon.png --output=./src
+```
+
+I like to flatten the icon structure, so that all the icons are in `./icons`.
+
+Finally, configure the icons for each platform in `electron-builder.yml`.

@@ -30,7 +30,8 @@ const createWindow = () => {
             nodeIntegration: true,
             webSecurity: true,
             contextIsolation: true
-        }
+        },
+        icon: path.join(__dirname, 'public/favicon.png')
     });
 
     // and load the index.html of the app.

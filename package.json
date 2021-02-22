@@ -1,9 +1,22 @@
 {
     "name": "electron-svelte-app",
     "productName": "Electron Svelte App",
-    "version": "0.3.0",
+    "version": "0.4.0",
+    "author": {
+        "name": "breadthe",
+        "email": "omigoshdev@protonmail.com"
+    },
     "license": "MIT",
     "description": "Electron Svelte Tailwind app template",
+    "keywords": [
+        "electron",
+        "svelte",
+        "tailwind",
+        "tailwindcss",
+        "rollup",
+        "desktop",
+        "template"
+    ],
     "main": "src/index.js",
     "scripts": {
         "build": "rollup -c",
