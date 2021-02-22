@@ -10,7 +10,7 @@
         "dev": "rollup -c -w",
         "start": "sirv public",
         "electron": "wait-on http://localhost:5000 && electron .",
-        "electron:dev": "concurrently \"npm run dev\" \"npm run electron\"",
+        "electron:dev": "concurrently \"npm run dev\" \"electron .\"",
         "electron:build": "npm run build && electron-builder",
         "electron:build:mac": "npm run build && electron-builder --mac",
         "electron:build:win": "npm run build && electron-builder --win --x64",
