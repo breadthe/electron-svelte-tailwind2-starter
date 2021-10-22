@@ -52,23 +52,12 @@
   class:to-pink-300={!$dark}
 >
   <div class="flex flex-col items-center max-w-lg space-y-8">
-    <div class:text-pink-100={$dark} class:text-pink-900={!$dark}>
-      <h1 class="hello leading-tight">{title}</h1>
-      Visit the
-      <a
-        href="https://svelte.dev/tutorial"
-        class="border-b-4 border-dashed border-opacity-30
-        hover:border-opacity-100"
-        class:border-pink-100={$dark}
-        class:border-pink-900={!$dark}
-      >
-        Svelte tutorial
-      </a>
-      to learn how to build Svelte apps.
-    </div>
+    <h1 class="hello leading-tight">{title}</h1>
+
     <div class="flex items-center">
       <AppearanceToggler />
     </div>
+
     <div
       class="border-4 border-dashed max-w-sm p-4 rounded-lg space-y-2 {`border-${color}-${shade}`}"
     >

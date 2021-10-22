@@ -6,7 +6,7 @@ Based on [Svelte + TailwindCSS 2.0 starter](https://github.com/breadthe/svelte-t
 
 Features:
 
-- Electron 11
+- Electron 15
 - Svelte 3
 - TailwindCSS 2
 - Rollup
