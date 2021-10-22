@@ -42,7 +42,7 @@
         "@rollup/plugin-node-resolve": "^13",
         "autoprefixer": "^10.3",
         "concurrently": "^6.0",
-        "electron": "^11.2.3",
+        "electron": "^15",
         "electron-builder": "^22.9.1",
         "electron-packager": "^15.2.0",
         "postcss": "^8.3",
